@@ -33,7 +33,7 @@ function App() {
     <>
       <h1>Image Uplodaer</h1>
       <div>
-        <p>{username}</p>
+        <p>{username ? username : "now loading..."}</p>
       </div>
       <TextInput />
       <ImageUploader />
