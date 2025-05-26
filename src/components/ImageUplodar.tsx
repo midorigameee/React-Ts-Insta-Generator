@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
-const ImageUploader = () => {
-  const [imageSrc, setImageSrc] = useState<string | null>(null);
+interface Props {
+  imageSrc: string | null;
+  setImageSrc: React.Dispatch<React.SetStateAction<string | null>>;
+}
 
+const ImageUploader: React.FC<Props> = ({ imageSrc, setImageSrc }) => {
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;

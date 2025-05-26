@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
-const TextInput = () => {
-  const [text, setText] = useState("");
+interface Props {
+  text: string | null;
+  setText: React.Dispatch<React.SetStateAction<string | null>>;
+}
 
+const TextInput: React.FC<Props> = ({ text, setText }) => {
   return (
     <div className="p-4">
       <label htmlFor="text" className="block mb-2 font-semibold">
@@ -11,7 +14,7 @@ const TextInput = () => {
       <input
         type="text"
         id="text"
-        value={text}
+        value={text ? text : ""}
         onChange={(e) => setText(e.target.value)}
         placeholder="ここに入力してください"
         className="border border-gray-300 rounded px-3 py-2 w-full"

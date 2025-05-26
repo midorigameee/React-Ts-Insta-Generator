@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 
+const URL: string =
+  "https://graph.instagram.com/v22.0/me?fields=user_id,username&access_token=";
+const ACCESS_TOKEN: string =
+  "IGAARcqg4q7cZABZAE0xQ3dXRExveUxST290cmk3ajhUekdHY0loeXBtcVROYVlZAN21ZASm95dGtoRDFldExxVXlWblBtNmpoRTVhNnAyMVhEVTUya1ZAKOWpuNmJPZAGpKS1hKWHlYYnhwN3NZAZAk9xZAml1cDVQWGhkTU5EejR0dGhVMAZDZD";
+const API_URL: string = URL + ACCESS_TOKEN;
+
 interface PostToInstagramProps {
   imageUrl: string; // 加工済み画像URL（例：CloudinaryなどでホストされたURL）
   caption: string; // 投稿文
