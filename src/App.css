@@ -40,3 +40,29 @@
 .read-the-docs {
   color: #888;
 }
+
+nav a:hover {
+  color: #0070f3;
+}
+
+.navbar {
+  gap: 20px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  max-width: 960px;
+  margin: 0 auto; /* 中央揃え */
+  padding: 16px 24px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+/* リンクのスタイル */
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+  font-size: 14px;
+  font-weight: 500;
+}

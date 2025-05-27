@@ -1,21 +1,31 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Home from "./Home";
+import TermOfUse from "./pages/TermOfUse";
 import "./App.css";
-import ImageUploader from "./components/ImageUplodar";
-import TextInput from "./components/TextInput";
-import TestInstaConnection from "./components/TestInstaConnection";
-import type { ResponseFromInsta } from "./types";
 
 function App() {
-  const [response, setResponse] = useState<ResponseFromInsta | null>(null);
-  const [text, setText] = useState<string | null>(null);
-  const [imageSrc, setImageSrc] = useState<string | null>(null);
-
   return (
     <>
-      <h1>Image Uplodaer</h1>
-      <TestInstaConnection response={response} setResponse={setResponse} />
-      <TextInput text={text} setText={setText} />
-      <ImageUploader imageSrc={imageSrc} setImageSrc={setImageSrc} />
+      <Router>
+        <nav className="navbar">
+          <Link to="/" className="nav-link">
+            ホーム
+          </Link>
+          <Link to="/privacy-policy" className="nav-link">
+            プライバシーポリシー
+          </Link>
+          <Link to="/term-of-use" className="nav-link">
+            利用規約
+          </Link>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/term-of-use" element={<TermOfUse />} />
+        </Routes>
+      </Router>
     </>
   );
 }
