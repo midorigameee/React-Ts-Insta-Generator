@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "start-react": "vite --host",
     "start-backend": "cd backend && npm start",
-    "start": "concurrently \"npm run start-react\" \"npm run start-backend\""
+    "start": "concurrently  \"npm run start-backend\" \"npm run start-react\""
   },
   "dependencies": {
     "react": "^19.1.0",
