@@ -1,12 +1,24 @@
 import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 import cors from "cors";
 import fetch from "node-fetch"; // または "undici"
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 const PORT = 3001;
 
 app.use(cors());
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, "../dist")));
+
+app.get("*", (_req, res) => {
+  res.sendFile(path.join(__dirname, "../dist", "index.html"));
+});
 
 const INSTAGRAM_USER_ID = 9894503740643865;
 const ACCESS_TOKEN =
